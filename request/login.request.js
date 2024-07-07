@@ -1,7 +1,7 @@
 import { check } from "k6";
 import http from "k6/http"
 
-export default class login {
+export default class Login {
    #token
 
    access(user, pass) {
