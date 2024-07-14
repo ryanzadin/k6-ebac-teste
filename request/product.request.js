@@ -4,21 +4,16 @@ import Utils from "../utils/utils"
 
 export default class Produto {
     list(token) {
-        let request = http.get(`${Utils.getBaseUrl()}/products`, JSON.stringify(
-            {
-                "description": "string",
-                "itemPrice": 0,
-                "name": "string"
-            }
-        ), {
+        //let body = { "description": "string", "itemPrice": 0, "name": "string" };
+        //  let params = {
+        //     headers: { "Content-Type": "application/json", "Accept": "application/json" },
+
+        // };
+        let request = http.get(`${Utils.getBaseUrl()}/products`, {
             headers: {
                 Authorization: `Bearer ${token}`
-            },
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-        })
-        check(request, { 'listagem deve retornar 200': (res) => res.status === 200 })
+            }
+        });
+        check(request, { 'listagem deve retornar 200': (res) => res.status == 200 })
     }
 }

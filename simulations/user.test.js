@@ -21,7 +21,7 @@ export default function () {
   let product = new Produto()
 
   group('Login and get token', () => {
-    login.access(data.usuarios0k.user, data.usrios0k.pass)
+    login.access(data.usuario0k.user, data.usuario0k.pass)
   })
 
   group('List user', () => {

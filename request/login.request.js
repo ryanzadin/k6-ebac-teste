@@ -1,11 +1,11 @@
 import { check } from "k6";
 import http from "k6/http"
-
+import Utils from "../utils/utils";
 export default class Login {
    #token
 
    access(user, pass) {
-      let response = http.post(`${Utils.getBaseUrl}/login`, JSON.stringify(
+      let response = http.post(`${Utils.getBaseUrl()}/login`, JSON.stringify(
          {
             "username": user,
             "password": pass
