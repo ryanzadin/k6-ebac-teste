@@ -4,6 +4,7 @@ import Login from '../request/login.request';
 import data from '../data/usuarios.json'
 import User from '../request/user.request';
 import Produto from '../request/product.request';
+import Customer from '../request/customer.request';
 
 export const options = {
   stages: [
@@ -19,6 +20,7 @@ export default function () {
   let login = new Login()
   let user = new User()
   let product = new Produto()
+  let customer = new Customer()
 
   group('Login and get token', () => {
     login.access(data.usuario0k.user, data.usuario0k.pass)
@@ -33,7 +35,7 @@ export default function () {
   })
 
   group('Lista de clientes', () => {
-
+    customer.list(login.getToken())
   })
 
 }
